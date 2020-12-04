@@ -1,0 +1,138 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="khedutupdate.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>ખેડૂત અપડેટ</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    /* Remove the navbar's default rounded borders and increase the bottom margin */ 
+    .navbar {
+      margin-bottom: 50px;
+      border-radius: 0;
+      font-size:25px;
+    }
+    
+    /* Remove the jumbotron's default bottom margin */ 
+     .jumbotron {
+      margin-bottom: 0;
+      background-color: #93f0f6;
+      
+      /*height:100px;*/
+    }
+   
+    /* Add a gray background color and some padding to the footer */
+    footer {
+      background-color: #93f0f6;
+      padding: 25px;
+
+    }
+  </style>
+
+
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+
+             <div class="jumbotron">
+  <div class="container text-center">
+    <h1>ખેડૂત અપડેટ</h1>      
+     </div>
+</div>
+
+            <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      </div>
+
+       <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+           <li  id="home" runat="server"><a href="home.aspx"><span class="glyphicon glyphicon-home"></span> હોમ</a></li>
+                     <%--   <li id="e1" runat="server" visible="True"><a href="event.aspx">event</a></li>--%>
+            <li id="contact" runat="server"><a href="contactus.aspx"><span class="glyphicon glyphicon-phone-alt"></span> સંપર્ક કરો</a></li>
+          <li id="crop1" runat="server" visible="false"><a href="crop.aspx"><span class="glyphicon glyphicon-home"></span>પાક </a></li>         
+  
+          <li id="home2" runat="server" visible="false"><a href="admin.aspx">Home</a></li>
+               <li id="regdetails" runat="server" visible="false"><a href="registerdetails.aspx">User Detail</a></li>         
+           <li id="sms" runat="server" visible="false"><a href="SMS.aspx">SMS</a></li>         
+          <li id="crop" runat="server" visible="false"><a href="addcrop.aspx">Add Crop</a></li>         
+<%--          <li class="dropdown" id="me1" runat="server"><a class="dropdown-toggle" data-toggle="dropdown" href="#">
+            <asp:Label ID="Label2" runat="server" Text="Media" Visible="false" ></asp:Label></a>
+        <ul class="dropdown-menu">
+            <li id="vid" runat="server"><a href="video.aspx">Video</a></li>
+            <li id="img" runat="server"><a href="image.aspx">Image</a></li>
+       <li id="sm" runat="server"><a href="sms.aspx">SMS</a></li>
+      
+            </ul>
+      </li> 
+    <span class="glyphicon glyphicon-home"></span> 
+    --%>
+      </ul>                             
+          
+
+             <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown" id="profile" runat="server"><a class="dropdown-toggle" data-toggle="dropdown" href="#">
+            <asp:Label ID="Label1" runat="server" Text="admin" Visible="false"></asp:Label></a>
+       <%-- <asp:Label ID="Label3" runat="server" Text="lable1" Visible="false"></asp:Label></a>
+       --%>
+            <ul class="dropdown-menu">
+            <li id="edit_Khedut" runat="server"><a href="editfarmer.aspx"><span class="glyphicon glyphicon-user"></span>એડિટ પ્રોફાઇલ</a></li>         
+            <li id="changepass" runat="server"><a href="changepassword.aspx"><span class="glyphicon glyphicon-lock"></span>ચેંજ પાસવર્ડ</a></li>
+            <li id="logout" runat="server"><a href="Logout.aspx"><span class="glyphicon glyphicon-log-out"></span>લૉગઆઉટ</a></li>
+        </ul>
+      </li>
+    </ul>
+           
+           <%--  <ul class="nav navbar-nav navbar-left">
+          
+     <li id="crop1" runat="server" visible="false"><a href="crop.aspx">Crop</a></li>         
+
+    </ul>--%>
+
+
+            <ul class="nav navbar-nav navbar-right">
+          <%--<li id="login" runat="server"><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        --%>
+            <li  id="reg" runat="server"><a href="Registration.aspx"><span class="glyphicon glyphicon-user"></span> રજિસ્ટ્રેશન</a></li>
+    
+        <%--<li><a href="l.aspx"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+       --%>
+       <li id="login" runat="server"><a href="login.aspx"><span class="glyphicon glyphicon-log-in"></span> લોગિન</a></li>
+          <%--<asp:Label ID="u_n" runat="server" Text="" Visible="false"></asp:Label>
+                        <li id="logout" runat="server" visible="false"><a href="logout.aspx">
+                            <span class="glyphicon glyphicon-log-in"></span>logout</a></li>
+        --%>
+      
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+
+         <footer class="container-fluid text-center" >
+  <p style="font-weight: bold; color:#841c06; font-size: medium; height:30px">ડેવલોપેડ બાય રશ્મિ પટેલ</p>
+</footer>
+
+
+    </form>
+</body>
+</html>
